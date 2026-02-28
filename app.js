@@ -73,6 +73,12 @@ app.get('/api/sensors', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
+// บรรทัดนี้จะทำให้เวลาเข้าลิงก์หลัก แล้วมันจะเด้งไปหน้า login ทันที
+app.get('/', (req, res) => {
+    res.redirect('/login.html');
+});
+
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server is running on port ${PORT}`);
 });
